@@ -11,7 +11,7 @@ const PREDEFINED_QUESTIONS = [
   "What is the average rain frequency for each area?",
 ];
 
-export default function AssistantTab({ messages, isLoading, onSend }) {
+export default function AssistantTab({ messages, isLoading, onSend, onReplay }) {
   const [input, setInput] = useState("");
 
   function handleSubmit(e) {
@@ -63,7 +63,7 @@ export default function AssistantTab({ messages, isLoading, onSend }) {
                 <p>{m.content}</p>
                 {m.role === "assistant" && m.audioUrl && (
                   <button
-                    onClick={() => new Audio(m.audioUrl).play()}
+                    onClick={() => onReplay(m.audioUrl)}
                     className="mt-2 flex items-center gap-1 text-xs text-plum hover:text-accent"
                   >
                     <Volume2 size={14} /> Replay

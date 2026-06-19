@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "./components/Header";
 import TabNav from "./components/TabNav";
 import OverviewTab from "./components/OverviewTab";
@@ -16,6 +16,17 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [activeDataset, setActiveDataset] = useState(null);
   const [datasetError, setDatasetError] = useState(null);
+  const currentAudio = useRef(null);
+
+  function playAudio(url) {
+    if (currentAudio.current) {
+      currentAudio.current.pause();
+      currentAudio.current.currentTime = 0;
+    }
+    const audio = new Audio(url);
+    currentAudio.current = audio;
+    audio.play().catch(() => {});
+  }
 
   useEffect(() => {
     fetch("/api/dataset")
@@ -89,10 +100,7 @@ export default function Home() {
           setMessages((prev) =>
             prev.map((m) => (m.id === assistantId ? { ...m, audioUrl: url } : m))
           );
-          const audio = new Audio(url);
-          audio.play().catch(() => {
-            // Autoplay may be blocked by the browser — Replay button still works.
-          });
+          playAudio(url);
         })
         .catch(() => {});
     } catch (err) {
@@ -122,6 +130,7 @@ export default function Home() {
             messages={messages}
             isLoading={isLoading}
             onSend={sendMessage}
+            onReplay={playAudio}
           />
         )}
         {activeTab === "data" && <DataTab onDatasetChange={setActiveDataset} />}
