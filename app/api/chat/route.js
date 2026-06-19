@@ -49,18 +49,12 @@ function buildInputFromHistory(history, message) {
   if (Array.isArray(history)) {
     for (const turn of history) {
       if (turn && typeof turn.content === "string" && turn.role) {
-        items.push({
-          role: turn.role,
-          content: [{ type: turn.role === "user" ? "input_text" : "output_text", text: turn.content }],
-        });
+        items.push({ role: turn.role, content: turn.content });
       }
     }
   }
 
-  items.push({
-    role: "user",
-    content: [{ type: "input_text", text: message }],
-  });
+  items.push({ role: "user", content: message });
 
   return items;
 }
@@ -94,7 +88,7 @@ export async function POST(request) {
       );
     }
 
-    const url = `${AZURE_OPENAI_ENDPOINT}/openai/v1/responses`;
+    const url = `${AZURE_OPENAI_ENDPOINT}/openai/deployments/${AZURE_OPENAI_DEPLOYMENT_NAME}/chat/completions?api-version=2024-02-01`;
 
     const response = await fetch(url, {
       method: "POST",
@@ -103,11 +97,12 @@ export async function POST(request) {
         "api-key": AZURE_OPENAI_API_KEY,
       },
       body: JSON.stringify({
-        model: AZURE_OPENAI_DEPLOYMENT_NAME,
-        instructions: buildInstructions(dataset),
-        input: buildInputFromHistory(history, message),
+        messages: [
+          { role: "system", content: buildInstructions(dataset) },
+          ...buildInputFromHistory(history, message),
+        ],
         temperature: 0.5,
-        max_output_tokens: 500,
+        max_tokens: 500,
       }),
     });
 
@@ -121,14 +116,7 @@ export async function POST(request) {
     }
 
     const data = await response.json();
-
-    // Responses API returns output as an array of items; find the message
-    // item and extract its text content.
-    const messageItem = data.output?.find((item) => item.type === "message");
-    const textContent = messageItem?.content?.find(
-      (c) => c.type === "output_text"
-    );
-    const reply = textContent?.text ?? "";
+    const reply = data.choices?.[0]?.message?.content ?? "";
 
     return NextResponse.json({ reply });
   } catch (error) {
