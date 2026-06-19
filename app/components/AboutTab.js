@@ -1,5 +1,5 @@
 // ─── Update this URL once the PDF is ready ───────────────────────────────────
-const DOCUMENTATION_URL = "#"; // Replace with the actual PDF link
+const DOCUMENTATION_URL = "/Manila_Rain_Dashboard_Presentation.pdf";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const TABS_INFO = [
