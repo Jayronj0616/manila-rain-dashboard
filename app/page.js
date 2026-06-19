@@ -6,7 +6,6 @@ import TabNav from "./components/TabNav";
 import OverviewTab from "./components/OverviewTab";
 import InsightsTab from "./components/InsightsTab";
 import AssistantTab from "./components/AssistantTab";
-import PowerBITab from "./components/PowerBITab";
 import DataTab from "./components/DataTab";
 import LoadingOverlay from "./components/LoadingOverlay";
 
@@ -98,7 +97,6 @@ export default function Home() {
             onSend={sendMessage}
           />
         )}
-        {activeTab === "powerbi" && <PowerBITab />}
         {activeTab === "data" && <DataTab onDatasetChange={setActiveDataset} />}
       </main>
 

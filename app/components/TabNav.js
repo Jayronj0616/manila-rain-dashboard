@@ -2,7 +2,6 @@ const TABS = [
   { id: "overview", label: "Overview" },
   { id: "insights", label: "Insights" },
   { id: "assistant", label: "AI Assistant" },
-  { id: "powerbi", label: "Power BI" },
   { id: "data", label: "Data" },
 ];
 
