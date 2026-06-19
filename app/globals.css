@@ -23,3 +23,126 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
+
+/* ── Intro.js theme overrides ── */
+.introjs-tooltip {
+  background-color: #1e1030 !important;
+  color: #f3e8ff !important;
+  border: 1px solid rgba(161, 0, 255, 0.35) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+  min-width: 280px !important;
+  max-width: 340px !important;
+  padding: 22px 24px 16px !important;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif !important;
+}
+
+.introjs-tooltip-title {
+  display: none !important;
+}
+
+.introjs-tooltiptext {
+  font-size: 0.9rem !important;
+  line-height: 1.65 !important;
+  color: #e9d5ff !important;
+  padding: 0 0 14px !important;
+  margin: 0 !important;
+}
+
+.introjs-arrow {
+  border-color: transparent !important;
+}
+
+.introjs-arrow.bottom,
+.introjs-arrow.bottom-right,
+.introjs-arrow.bottom-middle {
+  border-top-color: #1e1030 !important;
+}
+
+.introjs-arrow.top,
+.introjs-arrow.top-right,
+.introjs-arrow.top-middle {
+  border-bottom-color: #1e1030 !important;
+}
+
+.introjs-arrow.left {
+  border-right-color: #1e1030 !important;
+}
+
+.introjs-arrow.right {
+  border-left-color: #1e1030 !important;
+}
+
+.introjs-progress {
+  background-color: rgba(161, 0, 255, 0.15) !important;
+  border-radius: 999px !important;
+  height: 3px !important;
+  margin-bottom: 14px !important;
+}
+
+.introjs-progressbar {
+  background-color: #a100ff !important;
+  border-radius: 999px !important;
+}
+
+.introjs-tooltipbuttons {
+  border-top: 1px solid rgba(161, 0, 255, 0.15) !important;
+  padding: 12px 0 0 !important;
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: flex-end !important;
+}
+
+.introjs-button {
+  background-color: transparent !important;
+  color: #c084fc !important;
+  border: 1px solid rgba(161, 0, 255, 0.3) !important;
+  border-radius: 8px !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  padding: 6px 16px !important;
+  text-shadow: none !important;
+  transition: all 0.15s ease !important;
+  cursor: pointer !important;
+}
+
+.introjs-button:hover {
+  background-color: rgba(161, 0, 255, 0.12) !important;
+  color: #ffffff !important;
+  border-color: rgba(161, 0, 255, 0.6) !important;
+}
+
+.introjs-nextbutton,
+.introjs-donebutton {
+  background-color: #7c3aed !important;
+  color: #ffffff !important;
+  border-color: #7c3aed !important;
+}
+
+.introjs-nextbutton:hover,
+.introjs-donebutton:hover {
+  background-color: #6d28d9 !important;
+  border-color: #6d28d9 !important;
+  color: #ffffff !important;
+}
+
+.introjs-disabled,
+.introjs-disabled:hover {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+  background-color: transparent !important;
+}
+
+.introjs-helperLayer {
+  border: 2px solid rgba(161, 0, 255, 0.6) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.55) !important;
+}
+
+.introjs-overlay {
+  opacity: 0.55 !important;
+}
+
+.introjs-bullets {
+  display: none !important;
+}

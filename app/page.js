@@ -27,6 +27,32 @@ export default function Home() {
       .catch((err) => setDatasetError(err.message));
   }, []);
 
+  async function startTour() {
+    const { default: introJs } = await import("intro.js");
+    await import("intro.js/introjs.css");
+
+    introJs()
+      .setOptions({
+        steps: [], // driven by data-intro attributes on the DOM
+        showProgress: true,
+        showBullets: false,
+        exitOnOverlayClick: false,
+        nextLabel: "Next →",
+        prevLabel: "← Back",
+        doneLabel: "Got it!",
+      })
+      .oncomplete(() => localStorage.setItem("tour_seen", "1"))
+      .onexit(() => localStorage.setItem("tour_seen", "1"))
+      .start();
+  }
+
+  useEffect(() => {
+    if (!localStorage.getItem("tour_seen")) {
+      startTour();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   async function sendMessage(text) {
     if (!text.trim() || isLoading) return;
 
@@ -86,7 +112,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-page">
       <Header />
-      <TabNav activeTab={activeTab} onChange={setActiveTab} />
+      <TabNav activeTab={activeTab} onChange={setActiveTab} onStartTour={startTour} />
 
       <main className="flex-1 px-6 py-6 sm:px-10">
         {activeTab === "overview" && <OverviewTab dataset={activeDataset} error={datasetError} />}
