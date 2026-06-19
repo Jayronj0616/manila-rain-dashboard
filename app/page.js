@@ -7,6 +7,7 @@ import OverviewTab from "./components/OverviewTab";
 import InsightsTab from "./components/InsightsTab";
 import AssistantTab from "./components/AssistantTab";
 import DataTab from "./components/DataTab";
+import AboutTab from "./components/AboutTab";
 import LoadingOverlay from "./components/LoadingOverlay";
 
 export default function Home() {
@@ -98,6 +99,7 @@ export default function Home() {
           />
         )}
         {activeTab === "data" && <DataTab onDatasetChange={setActiveDataset} />}
+        {activeTab === "about" && <AboutTab />}
       </main>
 
       {isLoading && <LoadingOverlay />}
