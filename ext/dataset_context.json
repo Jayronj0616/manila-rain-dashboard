@@ -1,0 +1,279 @@
+{
+  "dataset_overview": {
+    "total_rows": 36,
+    "areas": [
+      "Makati",
+      "Quezon City",
+      "Manila"
+    ],
+    "months_covered": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "temperature_rain_correlation": 0.325
+  },
+  "summary_per_area": [
+    {
+      "Area": "Makati",
+      "avg_temperature": 23.42,
+      "avg_rain_frequency": 3.58,
+      "min_temperature": 18.0,
+      "max_temperature": 28.0,
+      "min_rain_frequency": 2.1,
+      "max_rain_frequency": 5.5
+    },
+    {
+      "Area": "Manila",
+      "avg_temperature": 27.25,
+      "avg_rain_frequency": 3.85,
+      "min_temperature": 22.0,
+      "max_temperature": 32.0,
+      "min_rain_frequency": 2.6,
+      "max_rain_frequency": 5.8
+    },
+    {
+      "Area": "Quezon City",
+      "avg_temperature": 25.45,
+      "avg_rain_frequency": 5.96,
+      "min_temperature": 20.0,
+      "max_temperature": 31.0,
+      "min_rain_frequency": 4.9,
+      "max_rain_frequency": 7.2
+    }
+  ],
+  "model_info": {
+    "model_type": "Linear Regression (Temperature -> Rain Frequency)",
+    "rmse": 1.2263,
+    "r2_score": 0.154,
+    "intercept": 2.0347,
+    "coefficient_temperature": 0.0965
+  },
+  "full_cleaned_dataset": [
+    {
+      "Area": "Makati",
+      "Month": "January",
+      "Temperature": 28.0,
+      "Rain Frequency": 5.5
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "January",
+      "Temperature": 29.0,
+      "Rain Frequency": 7.2
+    },
+    {
+      "Area": "Manila",
+      "Month": "January",
+      "Temperature": 30.0,
+      "Rain Frequency": 3.8
+    },
+    {
+      "Area": "Makati",
+      "Month": "February",
+      "Temperature": 28.0,
+      "Rain Frequency": 4.1
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "February",
+      "Temperature": 30.0,
+      "Rain Frequency": 6.5
+    },
+    {
+      "Area": "Manila",
+      "Month": "February",
+      "Temperature": 31.0,
+      "Rain Frequency": 2.9
+    },
+    {
+      "Area": "Makati",
+      "Month": "March",
+      "Temperature": 27.0,
+      "Rain Frequency": 4.5
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "March",
+      "Temperature": 31.0,
+      "Rain Frequency": 5.96
+    },
+    {
+      "Area": "Manila",
+      "Month": "March",
+      "Temperature": 32.0,
+      "Rain Frequency": 5.8
+    },
+    {
+      "Area": "Makati",
+      "Month": "April",
+      "Temperature": 26.0,
+      "Rain Frequency": 3.2
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "April",
+      "Temperature": 28.0,
+      "Rain Frequency": 6.7
+    },
+    {
+      "Area": "Manila",
+      "Month": "April",
+      "Temperature": 30.0,
+      "Rain Frequency": 4.1
+    },
+    {
+      "Area": "Makati",
+      "Month": "May",
+      "Temperature": 25.0,
+      "Rain Frequency": 2.5
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "May",
+      "Temperature": 27.0,
+      "Rain Frequency": 5.6
+    },
+    {
+      "Area": "Manila",
+      "Month": "May",
+      "Temperature": 29.0,
+      "Rain Frequency": 3.849999999999999
+    },
+    {
+      "Area": "Makati",
+      "Month": "June",
+      "Temperature": 24.0,
+      "Rain Frequency": 3.9
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "June",
+      "Temperature": 25.454545454545453,
+      "Rain Frequency": 6.2
+    },
+    {
+      "Area": "Manila",
+      "Month": "June",
+      "Temperature": 28.0,
+      "Rain Frequency": 4.6
+    },
+    {
+      "Area": "Makati",
+      "Month": "July",
+      "Temperature": 23.0,
+      "Rain Frequency": 2.1
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "July",
+      "Temperature": 25.0,
+      "Rain Frequency": 5.4
+    },
+    {
+      "Area": "Manila",
+      "Month": "July",
+      "Temperature": 27.0,
+      "Rain Frequency": 3.7
+    },
+    {
+      "Area": "Makati",
+      "Month": "August",
+      "Temperature": 22.0,
+      "Rain Frequency": 4.2
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "August",
+      "Temperature": 24.0,
+      "Rain Frequency": 5.96
+    },
+    {
+      "Area": "Manila",
+      "Month": "August",
+      "Temperature": 26.0,
+      "Rain Frequency": 2.9
+    },
+    {
+      "Area": "Makati",
+      "Month": "September",
+      "Temperature": 21.0,
+      "Rain Frequency": 3.5
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "September",
+      "Temperature": 23.0,
+      "Rain Frequency": 6.1
+    },
+    {
+      "Area": "Manila",
+      "Month": "September",
+      "Temperature": 25.0,
+      "Rain Frequency": 4.8
+    },
+    {
+      "Area": "Makati",
+      "Month": "October",
+      "Temperature": 20.0,
+      "Rain Frequency": 3.5818181818181816
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "October",
+      "Temperature": 22.0,
+      "Rain Frequency": 5.3
+    },
+    {
+      "Area": "Manila",
+      "Month": "October",
+      "Temperature": 24.0,
+      "Rain Frequency": 3.3
+    },
+    {
+      "Area": "Makati",
+      "Month": "November",
+      "Temperature": 19.0,
+      "Rain Frequency": 2.8
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "November",
+      "Temperature": 21.0,
+      "Rain Frequency": 4.9
+    },
+    {
+      "Area": "Manila",
+      "Month": "November",
+      "Temperature": 23.0,
+      "Rain Frequency": 3.849999999999999
+    },
+    {
+      "Area": "Makati",
+      "Month": "December",
+      "Temperature": 18.0,
+      "Rain Frequency": 3.1
+    },
+    {
+      "Area": "Quezon City",
+      "Month": "December",
+      "Temperature": 20.0,
+      "Rain Frequency": 5.7
+    },
+    {
+      "Area": "Manila",
+      "Month": "December",
+      "Temperature": 22.0,
+      "Rain Frequency": 2.6
+    }
+  ]
+}
